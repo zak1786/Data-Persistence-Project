@@ -7,7 +7,9 @@ public class PersistenceManager : MonoBehaviour
 {
     public static PersistenceManager Instance;
 
-    public string playerName;
+    public static string playerName;
+    public static string highScoreName;
+    public static int highScore;
 
     private void Awake()
     {
@@ -19,5 +21,7 @@ public class PersistenceManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        MenuUIHandler.LoadHighScoreInfo();
     }
 }
